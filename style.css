@@ -1,0 +1,103 @@
+.body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 100px;
+  gap: 150px;
+}
+
+.first-task {
+display: flex;
+width: 50%;
+height: 40px;
+border: 2px solid green;
+}
+
+.first-task__progress { 
+  width: 0%;
+  height: inherit;
+  background-color: seagreen;
+  transition: width 2s linear;
+}
+
+.body:hover .first-task__progress{
+  width: 90%;
+}
+
+@keyframes animation1 {
+  from {
+    width: 0%;
+  }
+  50% {
+    width: 100%;
+  }
+  to {
+    width: 0%;
+  }
+}
+
+.second-task {
+  display: flex;
+  justify-self: center;
+  width: 100%;
+  height: 40px;
+  border: 2px solid blue;
+}
+
+.second-task__progress {
+  width: 0%;
+  height: inherit;
+  background-color: blueviolet;
+}
+
+.second-task:hover .second-task__progress {
+  animation-name: animation1;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes animation2 {
+  from {
+  translate: 0 0;
+  }
+  20% {
+    translate: 260px 560px;
+  }
+  40% {
+    translate: 560px 260px;
+  }
+  60% {
+    translate: 400px 560px;
+  }
+  80% {
+    translate: 300px 460px;
+  }
+  to {
+    translate: 250px  560px;
+  }
+}
+
+.third-task {
+  position: relative;
+  display: flex;
+  justify-self: center;
+  width: 600px;
+  height: 600px;
+  border: 2px solid red;
+  margin-bottom: 200px;
+}
+
+.bounce-ball {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background-color: aqua;
+  border-radius: 100%;
+}
+
+.third-task:hover .bounce-ball {
+  animation-name: animation2;
+  animation-duration: 3s;
+  animation-iteration-count: 1;
+}
